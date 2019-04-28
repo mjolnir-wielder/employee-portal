@@ -17,8 +17,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController()
-@RequestMapping("/employeeportal")
-@Api(value="employeeportal")
+@RequestMapping("/employee-portal")
+@Api(value="employee-portal")
 public class EmployeePortalController {
 	
 	@Autowired

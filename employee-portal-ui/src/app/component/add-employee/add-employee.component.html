@@ -1,0 +1,55 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Add Employee</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <form class="needs-validation" novalidate="" [formGroup]="employeeForm">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">First Name</label>
+              <input type="text" formControlName="firstName" class="form-control" id="firstName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Last Name</label>
+              <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Valid lastName is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="dob">Date of Birth</label>
+                <input type="text" formControlName="dob" class="form-control" id="dob" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid dob is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                  <label for="gender">Gender</label>
+                  <div class="custom-control custom-radio">
+                      <input id="male" formControlName="gender" value="Male" type="radio" class="custom-control-input" checked required>
+                      <label class="custom-control-label" for="male">Male</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="female" formControlName="gender" type="radio" value="Female" class="custom-control-input" required>
+                        <label class="custom-control-label" for="female">Female</label>
+                      </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="department">Department</label>
+                    <div class="custom-control custom-radio">
+                        <input id="pb" formControlName="department" value="Prime_Brokerage" type="radio" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="pb">Prime Brokerage</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                          <input id="fundServices" formControlName="department" type="radio" value="Fund_Services" class="custom-control-input" required>
+                          <label class="custom-control-label" for="fundServices">Fund Services</label>
+                        </div>
+                  </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="addEmployee()">Add</button>
+        </form>
+  </div>

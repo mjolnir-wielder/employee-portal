@@ -1,50 +1,28 @@
 package com.mjolnir.employeeportal.model;
 
-public class Employee implements Comparable<Employee> {
+import java.util.UUID;
+
+public class Employee {
 
 	private String id;
-	private String name;
-	private int age;
-	private String contactNumber;
-	private Designation designation;
+	private String firstName;
+	private String lastName;
+	private String dob;
+	private Gender gender;
 	private Department department;
 
-	public Employee(String id, String name, int age, String contactNumber, Designation title, Department department) {
+	public Employee(String firstName, String lastName, String dob, Gender gender, Department department) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.contactNumber = contactNumber;
-		this.designation = title;
+		this.id = this.generateUuid();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
+		this.gender = gender;
 		this.department = department;
 	}
-
-	public String getContactNumber() {
-		return contactNumber;
-	}
-
-	public void setContactNumber(String contactNumber) {
-		this.contactNumber = contactNumber;
-	}
-
-	public Designation getDesignation() {
-		return designation;
-	}
-
-	public void setDesignation(Designation designation) {
-		this.designation = designation;
-	}
-
-	public Department getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
-	public int compareTo(Employee emp) {
-		return this.age - emp.age;
+	
+	private String generateUuid() {
+		return UUID.randomUUID().toString();
 	}
 
 	public String getId() {
@@ -55,29 +33,52 @@ public class Employee implements Comparable<Employee> {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public int getAge() {
-		return age;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Employee [id=").append(id).append(", name=").append(name).append(", age=").append(age)
-				.append(", contactNumber=").append(contactNumber).append(", title=").append(designation)
+		builder.append("Employee [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
+				.append(lastName).append(", dob=").append(dob).append(", gender=").append(gender)
 				.append(", department=").append(department).append("]");
 		return builder.toString();
 	}
-
 }

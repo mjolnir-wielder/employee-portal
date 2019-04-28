@@ -1,12 +1,12 @@
 package com.mjolnir.employeeportal.model;
 
-public enum Designation {
+public enum Gender {
 
-	Vice_President("vp"), Associate("assoc"), Manager("mngr");
+	Male("M"), Female("F");
 
 	private String value;
 
-	Designation(String value) {
+	Gender(String value) {
 		this.value = value;
 	}
 
