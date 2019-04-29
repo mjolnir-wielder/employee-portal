@@ -28,13 +28,13 @@ public class EmployeePortalController {
 	private AddEmployee addEmployee;
 	
     @GetMapping("/employees")
-    @ApiOperation(value = "produces a list of all employees", response = String.class)
+    @ApiOperation(value = "produces a list of all employees", response = List.class)
     public List<Employee> getAllEmployees() {
     	return this.getAllEmployees.execute();
     }
     
     @PostMapping("/employee")
-    @ApiOperation(value = "Adds an employee to the existing collection", response = String.class)
+    @ApiOperation(value = "Adds an employee to the existing collection", response = Employee.class)
     public Employee AddEmployee(@RequestBody Employee employee) {
         return this.addEmployee.execute(employee);
     }

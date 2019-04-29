@@ -10,6 +10,8 @@ public class Employee {
 	private String dob;
 	private Gender gender;
 	private Department department;
+	
+	public Employee() {	}
 
 	public Employee(String firstName, String lastName, String dob, Gender gender, Department department) {
 		super();
